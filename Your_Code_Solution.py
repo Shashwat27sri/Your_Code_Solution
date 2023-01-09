@@ -142,9 +142,6 @@ def bubbleSort(arr):
          
         if not swapped:
             return
-        
-        
-        
 def insertionSort(array):
     for step in range(1, len(array)):
         key = array[step]
@@ -157,143 +154,152 @@ def insertionSort(array):
 
 
 
+############# security function ##############
+
+def security():
+    userid=input("enter your userid:")
+    passwd=int(input("enter password"))
+    if (userid=="student" and passwd==123):
+        main()                  # main function callilng
+    else:
+        print("Oops! incorrect password or UserID")
+        
 
 
 
 
 
 
-print("----------------------"+ 
+def main():
+    print("----------------------"+ 
         "Welcome to Your Code Solutions"+ 
         "----------------------")
-while True:
-    print("\n------------------------------------"+
+    while True:
+        print("\n------------------------------------"+
           "Menu:"+
           "--------------------------------- \n ")
-    print("Press 1 to find fibonacci number using recursion  \n")
-    print("Press 2 to find armstrong number  \n")
-    print("Press 3 to find greatest amongst the three  \n")
-    print("Press 4 to find factorial of numbers using recursion \n")
-    print("Press 5 to traversing the array  \n")
-    print("Press 6 to inserting elements in matrix \n")
-    print("Press 7 to find transpose of matrics  \n")
-    print("Press 8 to search elements using linear seacrh  \n")
-    print("Press 9 to search elements using binary seacrh  \n")
-    print("Press 10 to Bubble Sort \n")
-    print("Press 11 to Insertion Sort \n")
-    print("Press 0 to exit the menu. \n")
+        print("Press 1 to find fibonacci number using recursion  \n")
+        print("Press 2 to find armstrong number  \n")
+        print("Press 3 to find greatest amongst the three  \n")
+        print("Press 4 to find factorial of numbers using recursion \n")
+        print("Press 5 to traversing the array  \n")
+        print("Press 6 to inserting elements in matrix \n")
+        print("Press 7 to find transpose of matrics  \n")
+        print("Press 8 to search elements using linear seacrh  \n")
+        print("Press 9 to search elements using binary seacrh  \n")
+        print("Press 10 to Bubble Sort \n")
+        print("Press 11 to Insertion Sort \n")
+        print("Press 0 to exit the menu. \n")
     
-    choice =int(input("Enter the task you want to do: \n"))
+        choice =int(input("Enter the task you want to do: \n"))
     
-    if choice == 1:
-        n=int(input("enter the number"))
-        a=fibonacci(n)
-        print(a)
-    elif choice == 2:
-        num=int(input("enter the number"))
-        armstrong(num)
+        if choice == 1:
+            n=int(input("enter the number"))
+            a=fibonacci(n)
+            print(a)
+        elif choice == 2:
+            num=int(input("enter the number"))
+            armstrong(num)
         
-    elif choice == 3:
-        num1=int(input("enter number1"))
-        num2=int(input("enter number2"))
-        num3=int(input("enter number3"))
-        greatestamongst(num1,num2,num3)
+        elif choice == 3:
+            num1=int(input("enter number1"))
+            num2=int(input("enter number2"))
+            num3=int(input("enter number3"))
+            greatestamongst(num1,num2,num3)
 
         
-    elif choice == 4:                         #factorial
-        n=int(input("enter the number"))
-        factorial(n)
+        elif choice == 4:                         #factorial
+            n=int(input("enter the number"))
+            factorial(n)
 
         
-    elif choice == 5:
-        lst = []                                      #adding elements in array
-        n = int(input("Enter number of elements : "))
-        for i in range(0, n):
-            ele = int(input("Element-"))
-            lst.append(ele)
+        elif choice == 5:
+            lst = []                                      #adding elements in array
+            n = int(input("Enter number of elements : "))
+            for i in range(0, n):
+                ele = int(input("Element-"))
+                lst.append(ele)
             
-        traversing(lst)                               #calling func
+            traversing(lst)                               #calling func
 
         
-    elif choice == 6:
-        insertMatrix()
-
-
-        
-    elif choice == 7:
-        transposeMatrix()
+        elif choice == 6:
+            insertMatrix()
 
 
         
-    elif choice == 8:
-        arr=[]
-        n=int(input("enter the length of array"))
-        for i in range (0,n):
-            a=int(input("enter the value to array"))
-            arr.append(a)
-        print(arr)
-        x=int(input("enter the number to find"))
-
-        b=linearSearch(arr,x)      #func calling
-        
-        print("index of",x,"in the array is",b)
+        elif choice == 7:
+            transposeMatrix()
 
 
         
-    elif choice == 9:
-        arr=[]                      #initializing array
-        n=int(input("enter the length of array"))      #taking input from user in an array
-        for i in range (0,n):
-            a=int(input("enter the value to array"))
-            arr.append(a)
-        print(arr)              #printing array
-        
-        x=int(input("enter the number to find"))
-        result=binarySearch(arr,0,len(arr)-1,x)            #func calling
+        elif choice == 8:
+            arr=[]
+            n=int(input("enter the length of array"))
+            for i in range (0,n):
+                a=int(input("enter the value to array"))
+                arr.append(a)
+            print(arr)
+            x=int(input("enter the number to find"))
 
-        if result != -1:
-            print("Element is present at index", str(result))
+            b=linearSearch(arr,x)      #func calling
+        
+            print("index of",x,"in the array is",b)
+
+
+        
+        elif choice == 9:
+            arr=[]                      #initializing array
+            n=int(input("enter the length of array"))      #taking input from user in an array
+            for i in range (0,n):
+                a=int(input("enter the value to array"))
+                arr.append(a)
+            print(arr)              #printing array
+        
+            x=int(input("enter the number to find"))
+            result=binarySearch(arr,0,len(arr)-1,x)
+
+            if result != -1:
+                print("Element is present at index", str(result))
+            else:
+                print("Element is not present in array")
+
+            
+        elif choice == 10:
+            arr=[]                     #initializing array
+            n=int(input("enter the length of array"))      #taking input from user in an array
+            for i in range (0,n):
+                a=int(input("enter the value to array"))
+                arr.append(a)
+            print(arr)                 #printing array
+
+            bubbleSort(arr)            #func calling
+
+
+            print("Sorted array is:")
+            for i in range(len(arr)):
+                print("% d" % arr[i], end=" ")
+
+
+
+        elif choice == 11:
+            arr=[]                     #initializing array
+            n=int(input("enter the length of array"))      #taking input from user in an array
+            for i in range (0,n):
+                a=int(input("enter the value to array"))
+                arr.append(a)
+            print(arr)                 #printing array
+
+        
+            insertionSort(arr)
+            print('Sorted Array in Ascending Order:')
+            print(arr)
+        elif choice == 0:
+            break
         else:
-            print("Element is not present in array")
+            print("Invalid choice, please choose again\n")
 
             
-    elif choice == 10:
-        arr=[]                     #initializing array
-        n=int(input("enter the length of array"))      #taking input from user in an array
-        for i in range (0,n):
-            a=int(input("enter the value to array"))
-            arr.append(a)
-        print(arr)                 #printing array
-
-        bubbleSort(arr)            #func calling
-
-
-        print("Sorted array is:")
-        
-        
-        
-        for i in range(len(arr)):
-            print("% d" % arr[i], end=" ")
-
-
-
-    elif choice == 11:
-        arr=[]                     #initializing array
-        n=int(input("enter the length of array"))      #taking input from user in an array
-        for i in range (0,n):
-            a=int(input("enter the value to array"))
-            arr.append(a)
-            
-        print(arr)                 #printing array
-
-        
-        insertionSort(arr)            #func calling
-        print('Sorted Array in Ascending Order:')
-        print(arr)
-        
-        
-        
-    elif choice == 0:
-        break
-    else:
-        print("Invalid choice, please choose again\n")
+# main
+security()       #userid=student password=123
+    
